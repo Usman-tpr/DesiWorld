@@ -22,3 +22,37 @@ body{
 .product{
 font-family: 'Poppins';
 }
+.card{
+    position: relative;
+}
+.sale-text{
+    position: absolute;
+    top: 4%;
+    left: 77%;
+    color: white;
+}
+.side-images{
+    position: relative;
+}
+.side-icons{
+    position: absolute;
+    left: 0%;
+
+   
+}
+.insta{
+    position: absolute;
+    left: 0%;
+    top: 32%;
+
+}
+.tik{
+    position: absolute;
+    left: 0%;
+    top: 42%;
+}
+.twitter{
+    position: absolute;
+    left: 0%;
+    top: 52%;
+}
