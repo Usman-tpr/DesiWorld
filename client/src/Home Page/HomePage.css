@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    font-family: 'Poppins';
+}
+.shop-btn{
+    border: none;
+    background-color: brown;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 15px;
+}
+.about{
+    background-color: rgb(56, 56, 56);
+    color: white;
+    font-family: 'Poppins';
+    padding-bottom: 20px;
+}
+.product-title{
+    border-bottom: 2px solid red;
+}
+.product{
+font-family: 'Poppins';
+}
