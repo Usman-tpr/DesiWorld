@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import './HomePage.css'
 import {BiArrowFromLeft} from 'react-icons/bi'
 import Footer from './Footer/Footer'
+import { Link } from 'react-router-dom'
 const HomePage = () => {
     return (
         <>
@@ -14,25 +15,25 @@ const HomePage = () => {
             <img src="/images/twitter.png" className='twitter' alt="" width='30px' height='30px'/>
 
                 <div className="row d-flex justify-content-around align-items-center side-images">
-                    <div className="col-4">
+                    <div className="col-lg-4 col-12">
 
                         <img src="/images/header-image.png" alt="" width='400px' height='300px' />
                     </div>
-                    <div className="col-4">
+                    <div className="col-lg-4 col-12 mt-lg-0 mt-5">
                         <h3 className='fw-bold'>Best Quality Products</h3>
                         <h1 className='mt-3 fw-bold'>Join The Organic Movement!</h1>
-                        <button className='shop-btn'>Shop Now!</button>
+                        <Link className='shop-btn' to='/products'>Shop Now!</Link>
                     </div>
                 </div>
             </div>
             <div className="about mt-5 pt-3">
                 <div className="container ">
                     <div className="row d-flex justify-content-around align-items-center">
-                        <div className="col-3">
+                        <div className="col-sm-3 text-center">
                             <img src="/images/images.jpeg" className='rounded-3' alt="" />
                         </div>
-                        <div className="col-4">
-                            <h2 className='fw-bold'>Lorem ipsum dolor</h2>
+                        <div className="col-sm-4 ">
+                            <h2 className='fw-bold '>Lorem ipsum dolor</h2>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quam quos doloribus ipsam nostrum amet quidem dicta id, fuga asperiores. Odit ratione at illo incidunt doloremque nemo consequatur quia asperiores?
 
@@ -55,34 +56,18 @@ const HomePage = () => {
                         <div className="product">
                             <img src="/images/card1.jpeg" alt="" />
                             <h4 className='mt-2 fw-bold'>Lorem ipsum dolor sit.</h4>
-                            <h5 className='mt-2 fw-bold'>Price : 999/-</h5>
-
+                            <h5 className='mt-2 mb-4 fw-bold'>Price : 999/-</h5>
+                             <Link className='shop-btn '> Buy</Link>
                         </div>
                         <div className="product">
                             <img src="/images/card1.jpeg" alt="" />
                             <h4 className='mt-2 fw-bold'>Lorem ipsum dolor sit.</h4>
-                            <h5 className='mt-2 fw-bold'>Price : 999/-</h5>
-
+                            <h5 className='mt-2 mb-4  fw-bold'>Price : 999/-</h5>
+                            <Link className='shop-btn'>Buy</Link>
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12 d-flex justify-content-around mt-2">
-
-                        <div className="product">
-                            <img src="/images/card1.jpeg" alt="" />
-                            <h4 className='mt-2 fw-bold'>Lorem ipsum dolor sit.</h4>
-                            <h5 className='mt-2 fw-bold'>Price : 999/-</h5>
-
-                        </div>
-                        <div className="product">
-                            <img src="/images/card1.jpeg" alt="" />
-                            <h4 className='mt-2 fw-bold'>Lorem ipsum dolor sit.</h4>
-                            <h5 className='mt-2 fw-bold'>Price : 999/-</h5>
-
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div className="row text-center mt-5 bg-light">
                 <div className="col d-flex align-items-center justify-content-center">
