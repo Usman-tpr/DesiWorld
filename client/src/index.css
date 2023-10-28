@@ -2,4 +2,14 @@
 body {
 font-family: 'Poppins';
 }
+.shop-btn{
+    background-color: brown;
+    color: white;
+    border: none;
+    font-family: "Poppins";
+    border-radius: 10px;
+    padding: 10px 30px;
+    text-decoration: none;
+    
+}
 

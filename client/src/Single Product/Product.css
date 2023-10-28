@@ -1,0 +1,12 @@
+.quantity{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.quantity-item{
+    font-size: x-large;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+.no-drop{
+    cursor: no-drop;
+}

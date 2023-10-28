@@ -1,0 +1,22 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.product-cate{
+    background-color: brown;
+    color: white;
+    font-weight: 500;
+    font-size: x-large;
+    text-align: center;
+    
+    }
+ 
+    .product-cate div:hover{
+        transition: 0.3s ease-in-out;
+    background-color: rgb(131, 0, 0);
+    
+    }
+    .test{
+        transition: 0.5s ease-in-out;
+    }
