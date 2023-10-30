@@ -1,18 +1,30 @@
 import React , {useState,useEffect}from 'react'
 import './Admin.css'
+import axios from 'axios'
 const Admin = () => {
-    const [formData,setFormData] =useState({
+    const [data,setData] =useState({
         title:"",
         desc:"",
         price:"",
         category:"",
-        image:null,
+        image:"",
     })
     
-
-    const handleSubmit = (e) => {
+  
+    const handleSubmit = async(e) => {
         e.preventDefault();
-     console.log(formData)
+        const formData = new FormData();
+        formData.append('title', data.title);
+        formData.append('desc', data.desc);
+        formData.append('price', data.price);
+        formData.append('category', data.category);
+        formData.append('image', data.image);
+        console.log(data.image)
+        const response = await axios.post("http://localhost:5000/addProduct", formData,
+        );
+        console.log(response);
+     
+
     
     }
 
@@ -22,14 +34,14 @@ const Admin = () => {
         // If the input is for an image
         if (type === 'file') {
           const file = e.target.files[0];
-          setFormData({
-            ...formData,
+          setData({
+            ...data,
             [name]: file,
           });
         } else {
           // For text input fields
-          setFormData({
-            ...formData,
+          setData({
+            ...data,
             [name]: value,
           });
         }
@@ -51,7 +63,7 @@ const Admin = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-6">
-                        <form className='card p-3' onSubmit={handleSubmit} encType='multipart/form-data'>
+                        <form className='card p-3' onSubmit={handleSubmit} enctype="multipart/form-data">
                             <h2 className=''>Enter Product Details</h2>
                             <div class="mb-3">
                                 <label htmlFor="exampleInputEmail1" class="form-label">title for Product</label>
