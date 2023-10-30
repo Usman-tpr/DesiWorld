@@ -1,4 +1,4 @@
-import React , {useState}from 'react'
+import React , {useState,useEffect}from 'react'
 import './Admin.css'
 const Admin = () => {
     const [formData,setFormData] =useState({
@@ -6,9 +6,9 @@ const Admin = () => {
         desc:"",
         price:"",
         category:"",
-        Image:"",
+        image:null,
     })
-    const [image,setImage] = useState('')
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,20 +17,35 @@ const Admin = () => {
     }
 
     const handleChange = (e) => {
-        const {name,value,type} = e.target;
-        setFormData({
+        const { name, value, type } = e.target;
+      
+        // If the input is for an image
+        if (type === 'file') {
+          const file = e.target.files[0];
+          setFormData({
             ...formData,
-            [name]: value
-        })
-    }
+            [name]: file,
+          });
+        } else {
+          // For text input fields
+          setFormData({
+            ...formData,
+            [name]: value,
+          });
+        }
+      };
     
-   const handleChangeImgae = (e) => {
-    const file = e.target.files[0];
+//    const handleChangeImgae = (e) => {
+//     const file = e.target.files[0];
     
-    setImage(file)
-    console.log(image)
-   }
-    
+//     setFormData({
+        
+//         image:file
+//     })
+// }
+//     // useEffect(()=>{
+    //     console.log(image)
+    // },[])
      return (
         <div>
             <div className="container">
@@ -53,7 +68,7 @@ const Admin = () => {
 
                             <div className="mb-3">
                             <label htmlFor="category">Image</label>
-                            <input type="file" className='form-control' onChange={handleChangeImgae} name='image'  accept=".png, .jpg, .jpeg"/>
+                            <input type="file" className='form-control' onChange={handleChange} name='image'  accept=".png, .jpg, .jpeg"/>
                             </div>
                             <div className="mb-3">
                             <label htmlFor="category">Category</label>
