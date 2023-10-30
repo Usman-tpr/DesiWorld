@@ -2,10 +2,15 @@ const Product = require('../Models/productModel')
 const slugify = require('slugify')
 
 const addProductController = async(req,res)=>{
+    
+    
+    
  try {
     const {title,desc,price,category} = req.body;
-    const image = req.file.filename;
-  
+    
+    
+    const  image = req.file.filename;
+    console.log(image);
     const newProduct = await new Product({
       title,
       desc,
