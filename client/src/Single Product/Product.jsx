@@ -1,7 +1,11 @@
-import {useState} from 'react'
+import {useState , useEffect} from 'react'
 import './Product.css'
 import Navbar from '../Navbar/Navbar'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 const Product = () => {
+    const { id } = useParams();
+    const [ products , setProducts ] = useState([]);
     const [count,setCount] = useState(1)
     const [cross,setCross] = useState('no-drop')
     const increase = () =>{
@@ -16,8 +20,23 @@ const Product = () => {
         else {
             setCount(count-1)
         }
-      
-    }
+}
+
+
+    const getAllEvents = async () => {
+        try {
+            console.log(id)
+            const product = await axios.get(`http://localhost:5000/singleProduct/${id}`);
+            console.log(product)
+            setProducts(product.data.products)
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        getAllEvents();
+    }, []);
     return (
         <>
             <Navbar />

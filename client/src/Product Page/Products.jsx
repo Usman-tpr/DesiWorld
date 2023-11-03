@@ -1,9 +1,11 @@
-import {useState} from 'react'
+import {useState , useEffect} from 'react'
 import Navbar from '../Navbar/Navbar'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 import './Products.css'
 const Products = () => {
     const [top , setTop] = useState('mt-5 pt-1')
+    const [products, setProduct] = useState([])
     window.addEventListener('scroll',()=>{
         if(window.scrollY>50){
               setTop('test ')
@@ -12,6 +14,17 @@ const Products = () => {
             setTop("mt-5 pt-1 test")
         }
     })
+
+    const getProducts = async () =>{
+        const response = await  axios.get('http://localhost:5000/getProducts')
+        // console.log(response.data.products)
+        setProduct(response.data.products)
+     
+    
+    }
+    useEffect(()=>{
+        getProducts();
+    },[])
 
     return (
         <>
@@ -28,39 +41,23 @@ const Products = () => {
 
             <div className="container mt-5 pt-5 ">
                 <div className="row d-flex justify-content-around">
-                    <div class="card" style={{ width: "18rem" }}>
-                        <img src="/images/card1.jpeg" class="card-img-top" alt="..." />
+                {products.map((product)=>{
+                        console.log(product.image)
+                        return(
+                            <div class="card" style={{ width: "18rem" }}>
+                        <img src={`http://localhost:5000/uploads/images/${product.image}`}
+                                             class="card-img-top" alt="..." />
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to='/buy' class="shop-btn">Buy Now</Link>
+                            <h5 class="card-title">{product.title}</h5>
+                            <p class="card-text">{product.desc}</p>
+                            <p>RS.{product.price}</p>
+                            <Link to={`/buy/${product._id}`} class="shop-btn">Buy Now</Link>
                         </div>
                     </div>
+                        )
 
-                    <div class="card" style={{ width: "18rem" }}>
-                        <img src="/images/images.jpeg" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to='/buy' class="shop-btn">Buy Now</Link>
-                        </div>
-                    </div>
-                    <div class="card" style={{ width: "18rem" }}>
-                        <img src="/images/card1.jpeg" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to='/buy' class="shop-btn">Buy Now</Link>
-                        </div>
-                    </div>
-                    <div class="card" style={{ width: "18rem" }}>
-                        <img src="/images/card1.jpeg" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to='/buy' class="shop-btn">Buy Now</Link>
-                        </div>
-                    </div>
+                })}
+                    
 
                 </div>
             </div>
