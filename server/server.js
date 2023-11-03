@@ -3,7 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 const routes = require('./Routes/productRoute');
 const cors = require('cors');
+const path = require('path');
 app.use(cors());
+app.use('/uploads/images', express.static(path.join(__dirname, 'uploads/images')));
 require('dotenv').config();
 app.listen(process.env.PORT,async()=>{
     try {
