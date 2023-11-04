@@ -36,26 +36,26 @@ const Navbar = () => {
          
          <nav class="navbar navbar-expand-lg bg-body-secondary custom-navbar">
   <div class="container">
-    <a class="navbar-brand " href="#">Navbar</a>
+    <a class="navbar-brand " >Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
         <li class="nav-item mx-4">
-          <a class="nav-link custom-nav" aria-current="page" href="#">HOME</a>
+          <Link class="nav-link custom-nav" aria-current="page" to='/' >HOME</Link>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link  custom-nav" aria-current="page" href="#">ABOUT</a>
+          <Link class="nav-link  custom-nav" aria-current="page" >Cloths & Shoes</Link>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link custom-nav" aria-current="page" href="#">PRODUCTS</a>
+          <Link class="nav-link custom-nav" aria-current="page" to='/products' >  Desi Products</Link>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link custom-nav" aria-current="page" href="#">CONTACT US</a>
+          <Link class="nav-link custom-nav" aria-current="page" >Cosmatics</Link>
         </li>
         <li class="nav-item mx-4">
-          <a class="nav-link custom-nav" aria-current="page" href="#">LOGIN </a>
+          <Link class="nav-link custom-nav" aria-current="page" >Gadgets </Link>
         </li>
 
 
@@ -73,8 +73,7 @@ const Navbar = () => {
 
 
 
-      </div>
-    </div>
+    
 
   )
 }
