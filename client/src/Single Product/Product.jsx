@@ -47,7 +47,9 @@ const Product = () => {
     return (
         <>
             <Navbar />
-            <div className="container">
+            {
+                products && (
+                    <div className="container">
                 <div className="row">
                     <div className="col-6 single-product">
                         <img src={`http://localhost:5000/uploads/images/${products.image}`} alt="" />
@@ -85,6 +87,8 @@ const Product = () => {
                     </div>
                 </div>
             </div>
+                )
+            }
         </>
     )
 }
