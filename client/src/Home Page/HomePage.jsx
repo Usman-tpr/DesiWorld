@@ -21,7 +21,7 @@ const HomePage = () => {
                     </div>
                     <div className="col-lg-4 col-12 mt-lg-0 mt-5">
                         <h3 className='fw-bold'>Best Quality Products</h3>
-                        <h1 className='mt-3 fw-bold'>Join The Organic Movement!</h1>
+                        <h1 className='my-3 fw-bold'>Join The Organic Movement!</h1>
                         <Link className='shop-btn' to='/products'>Shop Now!</Link>
                     </div>
                 </div>
