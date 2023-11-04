@@ -42,11 +42,10 @@ const Products = () => {
             <div className="container mt-5 pt-5 ">
                 <div className="row d-flex justify-content-around">
                 {products.map((product)=>{
-                        console.log(product.image)
+                        
                         return(
-                            <div class="card" style={{ width: "18rem" }}>
-                        <img src={`http://localhost:5000/uploads/images/${product.image}`}
-                                             class="card-img-top" alt="..." />
+                            <div className="card col-sm-3 mt-2" >
+                        <img src={`http://localhost:5000/uploads/images/${product.image}`} width='300px' height='auto' />
                         <div class="card-body">
                             <h5 class="card-title">{product.title}</h5>
                             <p class="card-text">{product.desc}</p>

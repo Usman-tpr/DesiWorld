@@ -1,10 +1,22 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import Navbar from '../Navbar/Navbar'
 import './HomePage.css'
 import {BiArrowFromLeft} from 'react-icons/bi'
 import Footer from './Footer/Footer'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 const HomePage = () => {
+    const [products, setProduct] = useState([])
+    const getProducts = async () =>{
+        const response = await  axios.get('http://localhost:5000/getProducts')
+        const products = response.data.products.slice(0, 1);
+        setProduct(products)
+     
+    
+    }
+    useEffect(()=>{
+        getProducts();
+    },[])
     return (
         <>
             <Navbar />
@@ -51,21 +63,20 @@ const HomePage = () => {
 
                 </div>
                 <div className="row">
-                    <div className="col-12 d-flex justify-content-around mt-2">
+                    {products && products.map((product) =>{
+                        return(
+                            <div className="col-sm-4 d-flex justify-content-around mt-2">
 
-                        <div className="product">
-                            <img src="/images/card1.jpeg" alt="" />
-                            <h4 className='mt-2 fw-bold'>Lorem ipsum dolor sit.</h4>
-                            <h5 className='mt-2 mb-4 fw-bold'>Price : 999/-</h5>
-                             <Link className='shop-btn '> Buy</Link>
+                        <div className="product card">
+                            <img src={`http://localhost:5000/uploads/images/${product.image}`} alt="" className='me-2' width='300px' height='auto'/>
+                            <h4 className='mt-2 fw-bold mx-2'>{product.title}</h4>
+                            <h5 className='mt-2 mb-4 fw-bold mx-2'>Price : {product.price}/-</h5>
+                             <Link to={`/buy/${product._id}`} class="shop-btn  mx-2 text-center">Buy Now</Link>
                         </div>
-                        <div className="product">
-                            <img src="/images/card1.jpeg" alt="" />
-                            <h4 className='mt-2 fw-bold'>Lorem ipsum dolor sit.</h4>
-                            <h5 className='mt-2 mb-4  fw-bold'>Price : 999/-</h5>
-                            <Link className='shop-btn'>Buy</Link>
-                        </div>
+                        
                     </div>
+                        )
+                    })}
                 </div>
                 
 

@@ -4,6 +4,7 @@ import HomePage from './Home Page/HomePage'
 import Products from './Product Page/Products'
 import Product from './Single Product/Product'
 import Admin from './Admin Page/Admin'
+import Adress from './Admin Page/Adress'
 const App = () => {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ const App = () => {
        <Route path='/products' element = { <Products />} />
        <Route path='/buy/:id' element = { <Product />} />
        <Route path='/admin' element = { <Admin />} />
+       <Route path='/address' element = { <Adress />} />
     </Routes>
     </BrowserRouter>
   )
