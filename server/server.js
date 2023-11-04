@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const routes = require('./Routes/productRoute');
+const adminRoutes = require('./Routes/adminRoute')
 const cors = require('cors');
 const path = require('path');
 app.use(cors());
@@ -18,3 +19,4 @@ app.listen(process.env.PORT,async()=>{
 
 app.use(express.json());
 app.use(routes)
+app.use(adminRoutes)
