@@ -15,7 +15,13 @@
     .product-cate div:hover{
         transition: 0.3s ease-in-out;
     background-color: rgb(131, 0, 0);
+    cursor: pointer;
     
+    }
+    .card-img-top{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
     .test{
         transition: 0.5s ease-in-out;

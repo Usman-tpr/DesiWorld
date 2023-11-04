@@ -40,12 +40,13 @@ const getProductsController = async(req, res) => {
     try {
         
 const products = await Product.find()
+
 res.send({
     success:true,
     products
 })
     } catch (error) {
-        res.send({success:false, error:error.message})
+        res.send({success:false, error:"failed to get products"})
     }
 }
 
@@ -69,6 +70,8 @@ const updateController = async (req, res) => {
         return res.status(400).json({error:error.message});
     }
 }
+ 
+//  delete controller
 
 const deleteController = async(req,res)=>{
     console.log('test')
@@ -84,4 +87,26 @@ const deleteController = async(req,res)=>{
     }
 }
 
-module.exports = {addProductController,getProductsController,updateController,deleteController}
+// get single contoller
+
+const getSingleContoller = async(req, res) => {
+    try {
+        const { id } = req.params;
+
+    const  singleProduct = await Product.findById(id);
+
+    return res.send({
+        success:true,
+        products: singleProduct,
+        message:"Single product"
+    })
+    } catch (error) {
+        res.send({
+            success:true,
+            message: error.message
+        })
+    }
+    
+}
+
+module.exports = {getSingleContoller,addProductController,getProductsController,updateController,deleteController}

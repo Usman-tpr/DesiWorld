@@ -1,33 +1,59 @@
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 import './Product.css'
 import Navbar from '../Navbar/Navbar'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 const Product = () => {
-    const [count,setCount] = useState(1)
-    const [cross,setCross] = useState('no-drop')
-    const increase = () =>{
-      setCount(count+1)
-      setCross('')
-    }
-    const decrease = () =>{
+    const { id } = useParams();
+    const [products, setProducts] = useState([]);
+    let [totalPrice, setTotalPrice] = useState()
+    const [count, setCount] = useState(1)
+    const [cross, setCross] = useState('no-drop')
+    const increase = () => {
+        setCount(count + 1)
         
-        if(count===1){
+        setTotalPrice(totalPrice + products.price);
+        setCross('')
+    }
+    const decrease = () => {
+       
+        if (count === 1) {
             setCross('no-drop')
         }
         else {
-            setCount(count-1)
+            
+            setTotalPrice(totalPrice - products.price );
+            setCount(count - 1)
+            console.log(products.price -= products.price)
         }
-      
     }
+
+
+    const getAllEvents = async () => {
+        try {
+            console.log(id)
+            const product = await axios.get(`http://localhost:5000/singleProduct/${id}`);
+            console.log(product.data.products)
+            setProducts(product.data.products)
+            setTotalPrice(product.data.products.price);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        getAllEvents();
+    }, []);
     return (
         <>
             <Navbar />
             <div className="container">
                 <div className="row">
-                    <div className="col-6">
-                        <img src="/images/card1.jpeg" alt="" />
-                        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, odit?</p>
-                        <h3>Price:1000</h3>
+                    <div className="col-6 single-product">
+                        <img src={`http://localhost:5000/uploads/images/${products.image}`} alt="" />
+                        <h2>{products.title}</h2>
+                        <p>{products.desc}</p>
+                        <h3>RS : {products.price} /-</h3>
 
                     </div>
                     <div className="col-6 mt-5">
@@ -44,13 +70,14 @@ const Product = () => {
                                 <label for="Address" class="form-label">Address </label>
                                 <input type="text" class="form-control" id="Address" />
                             </div>
-                            <div class="mb-3 col-3">
+                            <div class="mb-3 col-4">
                                 <label for="Address" class="form-label">Quantity </label>
                                 <div className='quantity d-flex justify-content-between align-items-center'>
                                     <span className={`quantity-item ${cross}`} onClick={decrease}>-</span>
                                     <span className='quantity-item'>{count}</span>
                                     <span className='quantity-item' onClick={increase}>+</span>
                                 </div>
+                                <h5 className='fw-bold mt-3'>Total Price :  {totalPrice} </h5>
                             </div>
 
                             <button type="submit" class="shop-btn">Order</button>
