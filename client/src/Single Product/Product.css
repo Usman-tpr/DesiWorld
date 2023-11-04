@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .quantity{
     border: 1px solid black;
     border-radius: 10px;
@@ -9,4 +11,14 @@
 }
 .no-drop{
     cursor: no-drop;
+}
+.single-product img {
+    
+    margin-top: 80px;
+ width: 90%;
+ height: auto;
+ border-radius: 21px;
+}
+.single-product h2{
+    font-family: 'Poppins';
 }
