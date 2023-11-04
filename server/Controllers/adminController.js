@@ -42,4 +42,22 @@ const getController = async (req, res) => {
     }
 
 }
-module.exports ={ addController , getController}
+
+ const deleteController = async (req, res) => {
+         try {
+            
+             const deleteitem = await Address.findByIdAndDelete(req.params.id)
+             res.send({
+                success: true,
+                deleteitem
+
+             })
+         } catch (error) {
+            res.send({
+                success: false,
+                error: error.message
+            })
+            console.log(error.message)
+         }
+ }
+module.exports ={ addController , getController , deleteController}
