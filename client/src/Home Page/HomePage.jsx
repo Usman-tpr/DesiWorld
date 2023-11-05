@@ -9,7 +9,7 @@ const HomePage = () => {
     const [products, setProduct] = useState([])
     const getProducts = async () =>{
         const response = await  axios.get('http://localhost:5000/getProducts')
-        const products = response.data.products.slice(0, 1);
+        const products = response.data.products.slice(-3);
         setProduct(products)
      
     
@@ -59,21 +59,21 @@ const HomePage = () => {
 
             <div className="container mt-5 pt-5">
                 <div className="row text-center d-flex justify-content-center">
-                    <div className="col-lg-4 col-12">
-                        <h1 className='fw-bold product-title'>Best Products</h1>
+                    <div className="col-lg-5 col-12">
+                        <h1 className='fw-bold product-title animate'>Recently Added</h1>
                     </div>
 
                 </div>
                 <div className="row">
                     {products && products.map((product) =>{
                         return(
-                            <div className="col-sm-4 d-flex justify-content-around mt-2">
+                            <div className="col-sm-4 d-flex justify-content-around mt-5">
 
-                        <div className="product card">
-                            <img src={`http://localhost:5000/uploads/images/${product.image}`} alt="" className='me-2' width='300px' height='auto'/>
+                        <div className="product card " >
+                            <img src={`http://localhost:5000/uploads/images/${product.image}`} alt="" className='me-2' width='100%' height='auto'/>
                             <h4 className='mt-2 fw-bold mx-2'>{product.title}</h4>
                             <h5 className='mt-2 mb-4 fw-bold mx-2'>Price : {product.price}/-</h5>
-                             <Link to={`/buy/${product._id}`} class="shop-btn  mx-2 text-center">Buy Now</Link>
+                             <Link to={`/buy/${product._id}`} class="shop-btn  mx-2 text-center mt-auto fw-bolder">Buy Now !</Link>
                         </div>
                         
                     </div>

@@ -1,6 +1,6 @@
 
 .custom-navbar{
-    background-color: brown;
+    background-color: white;
 }
 .custom-nav{
     letter-spacing: 2px;
@@ -8,7 +8,7 @@
 }
 .custom-nav {
     position: relative; 
-    color: white;
+    color:black ;
   }
   
   .custom-nav::before {
