@@ -20,21 +20,23 @@ const HomePage = () => {
     return (
         <>
             <Navbar />
-            <div className="container mt-5 pt-5">
-            <img src="/images/facebook.png" className='side-icons' alt="" width='30px' height='30px'/>
-            <img src="/images/instagram.png" className='insta' alt="" width='30px' height='30px'/>
-            <img src="/images/tiktok.png" className='tik' alt="" width='30px' height='30px'/>
-            <img src="/images/twitter.png" className='twitter' alt="" width='30px' height='30px'/>
+            <div className="container mt-5 pt-5 header">
+            <img src="/images/facebook.png" className='side-icons' alt=""/>
+            <img src="/images/instagram.png" className='insta' alt=""/>
+            <img src="/images/tiktok.png" className='tik' alt=""/>
+            <img src="/images/twitter.png" className='twitter' alt=""/>
 
                 <div className="row d-flex justify-content-around align-items-center side-images">
                     <div className="col-lg-4 col-12">
 
-                        <img src="/images/header-image.png" alt="" width='400px' height='300px' />
+                        <img src="/images/header-image.png" alt="" className='header-image' />
                     </div>
-                    <div className="col-lg-4 col-12 mt-lg-0 mt-5">
+                    <div className="col-lg-4 col-12 mt-lg-0 mt-5 text-lg-start text-center">
                         <h3 className='fw-bold'>Best Quality Products</h3>
-                        <h1 className='my-3 fw-bold'>Join The Organic Movement!</h1>
-                        <Link className='shop-btn' to='/products'>Shop Now!</Link>
+                        <h1 className='mt-3 fw-bold'>Join The Organic Movement!</h1>
+                        <div className="mt-4">
+                        <Link className='shop-btn ' to='/products'>Shop Now!</Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,8 +47,8 @@ const HomePage = () => {
                             <img src="/images/images.jpeg" className='rounded-3' alt="" />
                         </div>
                         <div className="col-sm-4 ">
-                            <h2 className='fw-bold '>Lorem ipsum dolor</h2>
-                            <p>
+                            <h2 className='fw-bold mt-lg-0 mt-3'>Lorem ipsum dolor</h2>
+                            <p className=''>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quam quos doloribus ipsam nostrum amet quidem dicta id, fuga asperiores. Odit ratione at illo incidunt doloremque nemo consequatur quia asperiores?
 
                             </p>
@@ -57,7 +59,7 @@ const HomePage = () => {
 
             <div className="container mt-5 pt-5">
                 <div className="row text-center d-flex justify-content-center">
-                    <div className="col-4">
+                    <div className="col-lg-4 col-12">
                         <h1 className='fw-bold product-title'>Best Products</h1>
                     </div>
 
