@@ -29,13 +29,17 @@ const Products = () => {
     return (
         <>
             <Navbar />
-            <div className={`container-fluid  fixed-top ${top}`}>
-                <div className="row d-flex justify-content-around align-items-center product-cate">
+            <div className={`container-fluid  fixed-top ${top} d-flex justify-content-center`}>
+                {/* <div className="row d-flex justify-content-around align-items-center product-cate">
                     <div className="col-1">Honey</div>
                     <div className="col-2">Dry Fruits</div>
                     <div className="col-1">Salajit</div>
                     <div className="col-1">Mix</div>
                     <div className="col-1">Others</div>
+                </div> */}
+
+                <div className="ani... ">
+                    <h1 className='fw-bold mt-4'>Explore All Our Products</h1>
                 </div>
             </div>
 
@@ -45,12 +49,12 @@ const Products = () => {
                         
                         return(
                             <div className="card col-sm-3 mt-2" >
-                        <img src={`http://localhost:5000/uploads/images/${product.image}`} width='300px' height='auto' />
+                        <img src={`http://localhost:5000/uploads/images/${product.image}`}  />
                         <div class="card-body">
                             <h5 class="card-title">{product.title}</h5>
                             <p class="card-text">{product.desc}</p>
                             <p>RS.{product.price}</p>
-                            <Link to={`/buy/${product._id}`} class="shop-btn">Buy Now</Link>
+                            <Link to={`/buy/${product._id}`} class="shop-btn abc">Buy Now</Link>
                         </div>
                     </div>
                         )

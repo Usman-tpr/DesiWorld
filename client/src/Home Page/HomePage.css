@@ -4,7 +4,7 @@ body{
 }
 
 .about{
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(43, 5, 5);
     color: white;
     font-family: 'Poppins';
     padding-bottom: 20px;
@@ -16,9 +16,25 @@ body{
 .product{
 font-family: 'Poppins';
 }
-.card{
-    position: relative;
+.card img{
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
 }
+.card{
+    border: none !important;
+    border-radius: 21px ;
+    position: relative;
+    /* https://smoothshadows.com/#djEsMSw1LDAuMDgsMjQsMzIsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
+box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02),
+0px 5px 4px rgba(3, 7, 18, 0.03),
+0px 12px 9px rgba(3, 7, 18, 0.05),
+0px 20px 15px rgba(3, 7, 18, 0.06),
+0px 32px 24px rgba(3, 7, 18, 0.08);
+
+}
+
+
+
 .sale-text{
     position: absolute;
     top: 4%;
@@ -89,4 +105,36 @@ font-family: 'Poppins';
 .twitter{
     top:32% ;
 }
+}
+
+
+.animate
+{ 
+   
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 40px;
+      letter-spacing: 3px;
+      font-family: 'Poppins';
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
 }
