@@ -74,16 +74,22 @@ const updateController = async (req, res) => {
 //  delete controller
 
 const deleteController = async(req,res)=>{
-    console.log('test')
+    
     try {
         
         const deleteProduct = await Product.findByIdAndDelete({_id:req.params.id})
         if(!deleteProduct){
             throw new Error("Event already deleted!")
         }
-        return res.status(200).json(deleteProduct);
+        return res.send({
+            success:true,
+            deleteProduct
+        })
     } catch (error) {
-        return res.status(500).json(error.message)
+        return res.send({
+            success:false,
+            error:error.message
+        })
     }
 }
 

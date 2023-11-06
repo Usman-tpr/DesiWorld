@@ -3,7 +3,9 @@ const Address = require('../Models/adminModel');
 const addController = async (req,res)=>{
 try {
     const {name , number , address , title , items } = req.body;
-
+    if(!name || !number  ||address){
+        throw Error("Please fill all the fields")
+    }
     const addAddress = await Address({
         name,
         number,

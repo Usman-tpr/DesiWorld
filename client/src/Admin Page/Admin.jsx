@@ -1,6 +1,7 @@
 import React , {useState,useEffect}from 'react'
 import './Admin.css'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 const Admin = () => {
     const [data,setData] =useState({
         title:"",
@@ -22,9 +23,12 @@ const Admin = () => {
         console.log(data.image)
         const response = await axios.post("http://localhost:5000/addProduct", formData,
         );
-        console.log(response);
-     
-
+        if(response.data.success) {
+          toast.success('Product added successfully')
+        }
+        else {
+            toast.error("something went wrong")
+        }
     
     }
 

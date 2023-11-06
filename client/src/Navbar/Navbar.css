@@ -15,11 +15,11 @@
     content: "";
     position: absolute;
     width: 0;
-    color: white;
-    height: 1px; /* Height of the line */
+    color: red;
+    height: 3px; /* Height of the line */
     bottom: 0; /* Position it at the bottom of the container */
     left: 50%; /* Start from the center */
-    background-color: white; /* Color of the line */
+    background-color: red; /* Color of the line */
     transition: width 0.4s ease-in-out; /* Transition effect */
     transform: translateX(-50%); /* Center the line */
     
@@ -28,10 +28,10 @@
   .custom-nav:hover::before {
     width: 100%; /* Expand the line to the left and right on hover */
     opacity: 1; /* Make the line visible */
-    color: white;
+    color: red;
   }
   .custom-nav:hover {
-    color: white; 
+    color: black; 
     font-weight: bolder;
     transition: 0.4s ease-in-out;
   }
