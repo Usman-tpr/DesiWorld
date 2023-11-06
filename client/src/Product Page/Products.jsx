@@ -29,32 +29,20 @@ const Products = () => {
     return (
         <>
             <Navbar />
-            <div className={`container-fluid  fixed-top ${top} d-flex justify-content-center`}>
-                {/* <div className="row d-flex justify-content-around align-items-center product-cate">
-                    <div className="col-1">Honey</div>
-                    <div className="col-2">Dry Fruits</div>
-                    <div className="col-1">Salajit</div>
-                    <div className="col-1">Mix</div>
-                    <div className="col-1">Others</div>
-                </div> */}
-
-                <div className="ani... ">
-                    <h1 className='fw-bold mt-4'>Explore All Our Products</h1>
-                </div>
-            </div>
+            
 
             <div className="container mt-5 pt-5 ">
                 <div className="row d-flex justify-content-around">
                 {products.map((product)=>{
                         
                         return(
-                            <div className="card col-sm-3 mt-2" >
-                        <img src={`http://localhost:5000/uploads/images/${product.image}`}  />
+                            <div className="card col-lg-3 col-10 mt-2 gap-3 mx-1 mt-5" >
+                        <img src={`http://localhost:5000/uploads/images/${product.image}`} className='card-image' width='100%' height='auto' />
                         <div class="card-body">
                             <h5 class="card-title">{product.title}</h5>
                             <p class="card-text">{product.desc}</p>
                             <p>RS.{product.price}</p>
-                            <Link to={`/buy/${product._id}`} class="shop-btn abc">Buy Now</Link>
+                            <Link to={`/buy/${product._id}`} class="shop-btn  mt-auto ">Buy Now</Link>
                         </div>
                     </div>
                         )
