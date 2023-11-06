@@ -21,6 +21,10 @@ body{
     cursor: pointer;
     
     }
+ .left-line{
+    border-left: 3px solid red;
+    padding-left: 10px;
+ }
 
     .test{
         transition: 0.5s ease-in-out;

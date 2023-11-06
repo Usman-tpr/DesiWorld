@@ -24,10 +24,10 @@ const Navbar = () => {
           <Link class="nav-link custom-nav" aria-current="page" to='/' >HOME</Link>
         </li>
         <li class="nav-item mx-4">
-          <Link class="nav-link  custom-nav" aria-current="page" >Cloths & Shoes</Link>
+          <Link class="nav-link  custom-nav" aria-current="page" to='/products' >Desi Products</Link>
         </li>
         <li class="nav-item mx-4">
-          <Link class="nav-link custom-nav" aria-current="page" to='/products' >  Desi Products</Link>
+          <Link class="nav-link custom-nav" aria-current="page"  > Cloths & Shoes  </Link>
         </li>
         <li class="nav-item mx-4">
           <Link class="nav-link custom-nav" aria-current="page" >Cosmatics</Link>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import {toast} from 'react-toastify'
 const Adress = () => {
   const [address, setAddress] = useState([]);
   const [title , setTitle] = useState([]);
@@ -22,6 +23,22 @@ const Adress = () => {
   const deleteitem = async (id) => {
     const response = await axios.delete(`http://localhost:5000/address/${id}`);
     console.log(response.data);
+    if(response.data.success){
+      toast.success("Delete item successfully")
+    }
+    else{
+      toast.error("Error deleting item")
+    }
+  }
+  const deleteproduct = async (id) => {
+    const response = await axios.delete(`http://localhost:5000/deleteProduct/${id}`);
+    console.log(response.data);
+    if(response.data.success){
+      toast.success("Delete item successfully")
+    }
+    else{
+      toast.error("already deleted")
+    }
   }
   useEffect(() => {
     getAddress();
@@ -90,7 +107,7 @@ const Adress = () => {
                   <th scope="row" key={e._id}>{index + 1}</th>
                   <td>{e.title}</td>
               
-                  <td className='btn btn-danger' onClick={() => deleteitem(e._id)}>delete</td>
+                  <td className='btn btn-danger' onClick={() => deleteproduct(e._id)}>delete</td>
                 </tr>
                 )
               })

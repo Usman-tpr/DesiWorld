@@ -19,6 +19,10 @@
  height: auto;
  border-radius: 21px;
 }
+.verticle-line{
+    border-left: 3px solid red;
+    padding-left: 10px;
+}
 .single-product h2{
     font-family: 'Poppins';
 }

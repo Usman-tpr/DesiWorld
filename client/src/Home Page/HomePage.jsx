@@ -40,7 +40,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="about mt-5 pt-3">
+            <div className="about mt-5 pt-3 ">
                 <div className="container ">
                     <div className="row d-flex justify-content-around align-items-center">
                         <div className="col-sm-3 text-center">
@@ -82,14 +82,14 @@ const HomePage = () => {
                 </div>
                 
 
-                <div className="row text-center mt-5 bg-light">
+                <div className="row text-center mt-5 ">
                 <div className="col d-flex align-items-center justify-content-center">
                 <Link className='shop-btn' to='/products'>Explore All <BiArrowFromLeft size={30}/></Link>
                 </div>
                 </div>
             </div>
 
-            <div className="container mt-5 pt-3">
+            {/* <div className="container mt-5 pt-3">
                 <div className="row d-flex justify-content-center text-center">
                     <div className="col-4">
                         <h1 className="fw-bold product-title">
@@ -107,7 +107,6 @@ const HomePage = () => {
                         <div class="card-body">
                             <h5 class="card-title">Lorem, ipsum dolor.</h5>
                             <p className='fw-bold'>Price : 999/-</p>
-                            {/* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                             <button href="#" class="shop-btn">Buy Now</button>
                         </div>
                     </div>
@@ -120,7 +119,6 @@ const HomePage = () => {
                         <div class="card-body">
                             <h5 class="card-title">Lorem, ipsum dolor.</h5>
                             <p className='fw-bold'>Price : 999/-</p>
-                            {/* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                             <button href="#" class="shop-btn">Buy Now</button>
                         </div>
                     </div>
@@ -133,7 +131,6 @@ const HomePage = () => {
                         <div class="card-body">
                             <h5 class="card-title">Lorem, ipsum dolor.</h5>
                             <p className='fw-bold'>Price : 999/-</p>
-                            {/* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                             <button href="#" class="shop-btn">Buy Now</button>
                         </div>
                     </div>
@@ -143,7 +140,7 @@ const HomePage = () => {
                 <button className='shop-btn'>Explore All <BiArrowFromLeft size={30}/></button>
                 </div>
                 </div>
-            </div>
+            </div> */}
 
             <Footer />
         </>
