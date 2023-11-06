@@ -71,8 +71,8 @@ const HomePage = () => {
 
                         <div className="product card " >
                             <img src={`http://localhost:5000/uploads/images/${product.image}`} alt="" className='me-2' width='100%' height='auto'/>
-                            <h4 className='mt-2 fw-bold mx-2'>{product.title}</h4>
-                            <h5 className='mt-2 mb-4 fw-bold mx-2'>Price : {product.price}/-</h5>
+                            <h4 className='mt-5 fw-bold mx-2 p-2'>{product.title}</h4>
+                            <h5 className='mt-4 mb-4 fw-bold mx-2 p-2'>Price : {product.price}/-</h5>
                              <Link to={`/buy/${product._id}`} class="shop-btn  mx-2 text-center mt-auto fw-bolder">Buy Now !</Link>
                         </div>
                         
@@ -84,7 +84,7 @@ const HomePage = () => {
 
                 <div className="row text-center mt-5 bg-light">
                 <div className="col d-flex align-items-center justify-content-center">
-                <button className='shop-btn'>Explore All <BiArrowFromLeft size={30}/></button>
+                <Link className='shop-btn' to='/products'>Explore All <BiArrowFromLeft size={30}/></Link>
                 </div>
                 </div>
             </div>
