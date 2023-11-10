@@ -10,7 +10,7 @@ const addProductController = async(req,res)=>{
     
     
     const  image = req.file.filename;
-    console.log(image);
+    
     const newProduct = await new Product({
       title,
       desc,

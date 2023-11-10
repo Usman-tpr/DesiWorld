@@ -24,8 +24,12 @@ const Loader = () => {
 	</svg>
 	
 </div> */}
-<div class="spinner-grow" role="status">
+<div className="d-flex justify-content-center align-items-center">
+<div class="spinner-grow " role="status">
   <span class="visually-hidden">Loading...</span>
+  
+</div>
+<h4 className='fw-bold mx-4'>Loading....</h4>
 </div>
     </>
   )
