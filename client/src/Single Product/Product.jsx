@@ -46,6 +46,8 @@ const Product = () => {
      const [name , setName] = useState();
      const [number , setNumber] = useState();
      const [address , setAddress] = useState();
+     const [city , setCity] = useState();
+     const [province, setProvince] = useState();
      
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,8 +56,11 @@ const Product = () => {
             number: number, 
             address: address, 
             items: count, 
+            city: city, 
+            province:province,
             title: products.title, 
         };
+        console.log(data)
              const response = await axios.post('http://localhost:5000/address',data)
              if(response.data.success){
                 toast.success('Product Will be soon at Your doorsteps')
@@ -96,8 +101,16 @@ const Product = () => {
                                         <label for="Address" class="form-label">Address </label>
                                         <input type="text" class="form-control" id="Address" onChange={((e)=> setAddress(e.target.value))}/>
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label">City </label>
+                                     <input type="text" class="form-control" id="city" onChange={((e)=> setCity(e.target.value))}/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="province" class="form-label">Province </label>
+                                        <input type="text" class="form-control" id="province" onChange={((e)=> setProvince(e.target.value))}/>
+                                    </div>
                                     <div class="mb-3 col-4">
-                                        <label for="Address" class="form-label">Quantity </label>
+                                        <label for="province" class="form-label">Quantity </label>
                                         <div className='quantity d-flex justify-content-between align-items-center'>
                                             <span className={`quantity-item ${cross}`} onClick={decrease}>-</span>
                                             <span className='quantity-item'>{count}</span>

@@ -14,6 +14,12 @@ const userAddressSchema = new mongoose.Schema({
     },
     items:{
         type: 'Number'
+    },
+    city:{
+        type: 'string',
+    },
+    province:{
+        type: 'string',
     }
 },
 {timestamps:true}

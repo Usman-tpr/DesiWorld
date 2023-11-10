@@ -39,14 +39,15 @@ const Products = () => {
             <Navbar />
 
 
-            <div className="container mt-5 pt-5 ">
+            <div className="container mt-5 pt-5 " onLoad={() => setImageLoaded(true)}>
+            {!imageLoaded && <Loader />}
                 <div className="row">
                     {products && products.map((product) => {
                         
 
                         return (
                             <div className="col-sm-4 d-flex justify-content-around mt-5">
-                                <div className="product card">
+                                <Link className="product card" to={`/buy/${product._id}`}>
                                     <img
                                         src={`http://localhost:5000/uploads/images/${product.image}`}
                                         className="me-2"
@@ -57,8 +58,8 @@ const Products = () => {
                                     {!imageLoaded && <Loader />}
                                     <h4 className='mt-5 fw-bold mx-2 left-line'>{product.title}</h4>
                                     <h5 className='mt-4 mb-4 fw-bold mx-2 '>Price : {product.price}/-</h5>
-                                    <Link to={`/buy/${product._id}`} className="shop-btn mx-2 text-center mt-auto fw-bolder ">Buy Now !</Link>
-                                </div>
+                                    {/* <Link  className="shop-btn mx-2 text-center mt-auto fw-bolder ">Buy Now !</Link> */}
+                                </Link>
                             </div>
                         );
                     })}
