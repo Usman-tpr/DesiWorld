@@ -5,7 +5,10 @@ const routes = require('./Routes/productRoute');
 const adminRoutes = require('./Routes/adminRoute')
 const cors = require('cors');
 const path = require('path');
-app.use(cors());
+const corsoptions = {
+    origin:"http://localhost:3000"
+}
+app.use(cors(corsoptions));
 app.use('/uploads/images', express.static(path.join(__dirname, 'uploads/images')));
 require('dotenv').config();
 app.listen(process.env.PORT,async()=>{
