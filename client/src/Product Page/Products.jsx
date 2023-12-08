@@ -47,7 +47,7 @@ const Products = () => {
 
                         return (
                             <div className="col-sm-4 d-flex justify-content-around mt-5">
-                                <Link className="product card" to={`/buy/${product._id}`}>
+                                <Link className="product card link" to={`/buy/${product._id}`}>
                                     <img
                                         src={`http://localhost:5000/uploads/images/${product.image}`}
                                         className="me-2"

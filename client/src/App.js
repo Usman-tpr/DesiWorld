@@ -8,6 +8,8 @@ import Adress from './Admin Page/Adress'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from './loader/Loader'
+import { FaSortDown } from 'react-icons/fa'
+import Footer from './Home Page/Footer/Footer'
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,6 +23,7 @@ const App = () => {
        <Route path='/add' element = { <Loader />} />
     
     </Routes>
+    <Footer />
     </BrowserRouter>
   )
 }
