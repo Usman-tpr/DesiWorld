@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './Products.css'
 import Loader from '../loader/Loader'
+import { FaStar,FaStarHalfAlt } from "react-icons/fa";
 
 
 
@@ -56,7 +57,9 @@ const Products = () => {
                                         onLoad={() => setImageLoaded(true)} // Set imageLoaded to true when the image is loaded
                                     />
                                     {!imageLoaded && <Loader />}
-                                    <h4 className='mt-5 fw-bold mx-2 left-line'>{product.title}</h4>
+                                    <h4 className='mt-5 fw-bold mx-2 '>{product.title}</h4>
+                                    <h6 className='fw-bold  mt-2 mx-2'>Reviews: <FaStar  className='text-color'/> <FaStar  className='text-color'/> <FaStar className='text-color'/> <FaStar className='text-color'/> <FaStarHalfAlt className='text-color'/></h6>
+
                                     <h5 className='mt-4 mb-4 fw-bold mx-2 '>Price : {product.price}/-</h5>
                                     {/* <Link  className="shop-btn mx-2 text-center mt-auto fw-bolder ">Buy Now !</Link> */}
                                 </Link>
@@ -67,7 +70,7 @@ const Products = () => {
                 </div>
             </div>
 
-
+    
         </>
     )
 }

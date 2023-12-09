@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import Loader from '../loader/Loader'
+import { FaStar,FaStarHalfAlt } from "react-icons/fa";
 const Product = () => {
     const { id } = useParams();
     const [products, setProducts] = useState([]);
@@ -60,7 +61,7 @@ const Product = () => {
             province:province,
             title: products.title, 
         };
-        console.log(data)
+        
              const response = await axios.post('http://localhost:5000/address',data)
              if(response.data.success){
                 toast.success('Product Will be soon at Your doorsteps')
@@ -75,19 +76,23 @@ const Product = () => {
             {
                 products && (
                     <div className="container">
-                        <div className="row">
+                        <div className="row d-flex justify-content-between">
                             
-                            <div className="col-sm-5 single-product mt-5">
+                            <div className="col-sm-6 single-product mt-5">
                             <h2 className='btn btn-success fw-bold'>Product Details</h2>
                                 <img src={`http://localhost:5000/uploads/images/${products.image}`} className='mt-4' onLoad={() => setImageLoaded(true)} width='500px' height='auto'/>
                                 {!imageLoaded && <Loader />}
-                                <h2 className='verticle-line mt-5'>{products.title}</h2>
-                                <p className='mt-3'>{products.desc}</p>
-                                <h3 className='mt-3'>RS : {products.price} /-</h3>
+                                <h2 className='mt-5 fw-bold'>{products.title}</h2>
+                                <p className='mt-3 fw-bold '>{products.desc}</p>
+                                <h3 className='mt-3 fw-bold'>RS : {products.price} /-</h3>
+                                <h4 className='fw-bold  '>Reviews: <FaStar  className='text-color'/> <FaStar  className='text-color'/> <FaStar className='text-color'/> <FaStar className='text-color'/> <FaStarHalfAlt className='text-color'/></h4>
+                                
+                                <h4 className='btn-bg '>Add Your Review</h4>
+
 
                             </div>
-                            <div className="col-sm-6 mt-5">
-                                <h2 className='btn btn-success fw-bold'>Please Fill the Form to Order </h2>
+                            <div className="col-sm-4 mt-5">
+                                <h5 className='btn-bg fw-bold'>Please Fill the Form to Place Order </h5>
                                 <form onSubmit={handleSubmit}>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -125,7 +130,32 @@ const Product = () => {
                         </div>
                     </div>
                 )
-            }
+           
+           }
+
+<div className="container mt-5 pt-5">
+    <div className="row"><h2>Related Products</h2></div>
+            <div className="row">
+                <div className="col-2 ">
+                    <img src="/images/honey1.png" alt="" width='200px'/>
+                </div>
+                <div className="col-2">
+                    <img src="/images/honey.png" alt="" width='200px'/>
+                </div>
+                <div className="col-2">
+                    <img src="/images/f1.png" alt="" width='200px'/>
+                </div>
+                <div className="col-2">
+                    <img src="/images/f2.png" alt="" width='200px'/>
+                </div>
+                <div className="col-2">
+                    <img src="/images/f3.png" alt="" width='200px'/>
+                </div>
+                <div className="col-2">
+                    <img src="/images/header-image.png" className='mt-4' alt="" width='200px'/>
+                </div>
+            </div>
+         </div>
         </>
     )
 }

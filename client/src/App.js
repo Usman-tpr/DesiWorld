@@ -23,7 +23,7 @@ const App = () => {
        <Route path='/add' element = { <Loader />} />
     
     </Routes>
-    <Footer />
+  
     </BrowserRouter>
   )
 }
