@@ -65,21 +65,21 @@ const Admin = () => {
      return (
         <div>
             <div className="container">
-                <div className="row">
+                <div className="row d-flex justify-content-center mt-3">
                     <div className="col-6">
                         <form className='card p-3' onSubmit={handleSubmit} enctype="multipart/form-data">
-                            <h2 className=''>Enter Product Details</h2>
+                            <h2 className='fw-bold'>Enter Product Details Here:</h2>
                             <div class="mb-3">
                                 <label htmlFor="exampleInputEmail1" class="form-label">title for Product</label>
-                                <input type="text" class="form-control" name='title' onChange={handleChange} />
+                                <input type="text" class="form-control" name='title' onChange={handleChange} placeholder='Enter Product Name...' />
                             </div>
                             <div class="mb-3">
                                 <label htmlFor="exampleInputPassword1" class="form-label">Description</label>
-                                <input type="text" class="form-control" name='desc' onChange={handleChange}/>
+                                <input type="text" class="form-control" name='desc' onChange={handleChange} placeholder='Enter Full Description... '/>
                             </div>
                             <div className="mb-3">
                             <label htmlFor="price">Price</label>
-                            <input type="Number" className='form-control'name='price' onChange={handleChange} />
+                            <input type="Number" className='form-control'name='price' onChange={handleChange} placeholder='Enter Price...'/>
                             </div>
 
                             <div className="mb-3">

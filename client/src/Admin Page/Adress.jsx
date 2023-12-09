@@ -47,7 +47,7 @@ const Adress = () => {
     <>
       <div className="container mt-5">
         <div className="row">
-          <h2 className='fw-bold btn btn-success'>My Orders</h2>
+          <h2 className='fw-bold btn btn-success'>Claimed Orders</h2>
           <div className="col mt-3">
             <table class="table table-striped table-responsive">
               <thead>
